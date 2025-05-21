@@ -1,0 +1,19 @@
+#game canvas{
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    margin-top: 4px;
+}
+
+#game{
+    text-align: center;
+    background-color: var(--main-background);
+}
+
+#game1{
+    display: inline;
+    margin-right: 4px;
+}
+
+#game2{
+    display: inline;
+}
