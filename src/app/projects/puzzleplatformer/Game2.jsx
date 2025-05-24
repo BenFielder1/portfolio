@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useRef } from 'react';
-import Phaser from 'phaser';
+import { useEffect, useRef } from "react";
+import Phaser from "phaser";
 
 //import functions from other scripts
 import { createNewPlatforms, createFollowCamera, createNewBox, createNewButton, createNewLever, createNewMovingPlatform, createNewSpikeSet, createNewEnemy, createNewExitDoor, createNewGameText, createNewPlayer } from "./levels/components/components.js"
@@ -12,8 +12,13 @@ export default function Game2() {
         // Only initialize the game once
         if (gameRef.current) return;
 
-        const width = window.innerWidth / 2 - 10;
-        const height = width * (600 / 800);
+        let width = window.innerWidth / 2 - 10;
+        let height = width * (600 / 800);
+
+        if(height > window.innerHeight - 100){
+            height = window.innerHeight - 100;
+            width = height * (800/600);
+        }
 
         // Basic Phaser config
         const config = {
@@ -22,7 +27,7 @@ export default function Game2() {
             width: width,
             height: height,
             physics: {
-                default: 'arcade',
+                default: "arcade",
                 arcade: {
                     gravity: { x: 0, y: 300 * ((window.innerWidth / 2 - 50) / 800) },
                     debug: false
@@ -63,7 +68,7 @@ let ready;
 
 class MainScene extends Phaser.Scene {
     constructor() {
-        super('MainScene');
+        super("MainScene");
         this.gameScale = 0;
     }
 

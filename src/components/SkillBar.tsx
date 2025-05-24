@@ -1,16 +1,16 @@
 interface SkillBarProps {
     name: string;
     level: number; // 0-100
-    color: 'blue' | 'green' | 'purple' | 'gray';
+    color: "blue" | "green" | "purple" | "gray";
 }
 
 export default function SkillBar({ name, level, color }: SkillBarProps) {
     const getColorClass = () => {
         switch (color) {
-            case 'blue': return 'bg-blue-600';
-            case 'green': return 'bg-green-600';
-            case 'purple': return 'bg-purple-600';
-            default: return 'bg-gray-600';
+            case "blue": return "bg-blue-600";
+            case "green": return "bg-green-600";
+            case "purple": return "bg-purple-600";
+            default: return "bg-gray-600";
         }
     };
 

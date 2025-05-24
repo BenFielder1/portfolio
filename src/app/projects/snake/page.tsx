@@ -1,17 +1,17 @@
 "use client"
 
 // pages/snake.tsx
-import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
+import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
 // import { Header } from "../components/header";
 
 // Import p5 dynamically with no SSR to avoid server-side rendering issues
-const Sketch = dynamic(() => import('react-p5').then(mod => mod.default), {
+const Sketch = dynamic(() => import("react-p5").then(mod => mod.default), {
   ssr: false
 });
 
-// Import PathFinding with a type assertion since it's a CommonJS module
-import PF from 'pathfinding';
+// Import PathFinding with a type assertion since it"s a CommonJS module
+import PF from "pathfinding";
 
 // TypeScript interfaces
 interface P5Instance {
@@ -174,7 +174,7 @@ const Snake: React.FC = () => {
     }
   };
 
-  // If not in browser, don't render the sketch
+  // If not in browser, don"t render the sketch
   if (!isBrowser) {
     return (
       <div>

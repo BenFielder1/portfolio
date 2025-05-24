@@ -1,5 +1,5 @@
-import SkillBar from '@/components/SkillBar';
-import { skills} from '@/data/skills';
+import SkillBar from "@/components/SkillBar";
+import { skills } from "@/data/skills";
 
 export default function SkillsPage() {
     return (
@@ -16,10 +16,10 @@ export default function SkillsPage() {
                                 name={skill.name}
                                 level={skill.level}
                                 color={
-                                    category === 'Programming Languages' ? 'blue' :
-                                        category === 'Frameworks & Libraries' ? 'green' :
-                                            category === 'Tools & Platforms' ? 'purple' :
-                                                'gray'
+                                    category === "Programming Languages" ? "blue" :
+                                        category === "Frameworks & Libraries" ? "green" :
+                                            category === "Tools & Platforms" ? "purple" :
+                                                "gray"
                                 }
                             />
                         ))}

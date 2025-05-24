@@ -1,7 +1,7 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import ProjectCard from '@/components/ProjectCard';
-import { games } from '@/data/games';
+import ProjectCard from "@/components/ProjectCard";
+import { games } from "@/data/games";
 
 export default function AboutPage() {
     return (
@@ -31,18 +31,18 @@ export default function AboutPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {games.map((game) => (
-                                <ProjectCard
-                                    key={game.id}
-                                    title={game.title}
-                                    description={game.description}
-                                    imagePath={game.imagePath}
-                                    technologies={game.technologies}
-                                    demoLink={game.demoLink}
-                                    githubLink={game.githubLink}
-                                />
-                            ))}
-                        </div>
+                {games.map((game) => (
+                    <ProjectCard
+                        key={game.id}
+                        title={game.title}
+                        description={game.description}
+                        imagePath={game.imagePath}
+                        technologies={game.technologies}
+                        demoLink={game.demoLink}
+                        githubLink={game.githubLink}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

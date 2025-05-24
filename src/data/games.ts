@@ -11,13 +11,13 @@ export interface Project {
 
 export const games: Project[] = [
     {
-        id: 'project-1',
-        title: 'Pyramid Numbers',
-        description: '',
-        imagePath: '/images/projects/newfeaturepic.png',
-        technologies: ['React', 'Next.js', 'Node.js', 'three.js'],
-        demoLink: '/spaceworm/pyramidnumbers',
-        githubLink: 'https://github.com/BenFielder1/snake-with-routing',
+        id: "project-1",
+        title: "Pyramid Numbers",
+        description: "",
+        imagePath: "/images/projects/newfeaturepic.png",
+        technologies: ["React", "Next.js", "Node.js", "three.js"],
+        demoLink: "/spaceworm/pyramidnumbers",
+        githubLink: "https://github.com/BenFielder1/snake-with-routing",
         featured: true,
     }
 ];

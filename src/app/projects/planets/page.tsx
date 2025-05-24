@@ -92,7 +92,7 @@ const Planets: React.FC = () => {
         const handleResize = (): void => {
             if (!mountRef.current) return;
 
-            // Still use the container's dimensions, not window dimensions
+            // Still use the container"s dimensions, not window dimensions
             const width = mountRef.current.clientWidth;
             const height = mountRef.current.clientHeight;
 
@@ -101,7 +101,7 @@ const Planets: React.FC = () => {
             camera.updateProjectionMatrix();
         };
 
-        window.addEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
 
         // Animation loop
         const animate = function (): void {
@@ -125,7 +125,7 @@ const Planets: React.FC = () => {
 
         // Clean up on unmount
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener("resize", handleResize);
             cleanup();
         };
     }, []);
@@ -135,9 +135,9 @@ const Planets: React.FC = () => {
             <div
                 ref={mountRef}
                 style={{
-                    width: '95vw',     // Set your desired width
-                    height: '90vh',    // Set your desired height 
-                    margin: '0 auto'    // Center the canvas
+                    width: "95vw",     // Set your desired width
+                    height: "90vh",    // Set your desired height 
+                    margin: "0 auto"    // Center the canvas
                 }}
             />
         </div>

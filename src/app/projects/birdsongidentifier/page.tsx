@@ -1,5 +1,5 @@
 "use client"
-import ReactPlayer from 'react-player'
+import ReactPlayer from "react-player"
 
 export default function AboutPage() {
     return (

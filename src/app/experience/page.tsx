@@ -1,5 +1,5 @@
-import ExperienceItem from '@/components/ExperienceItem';
-import { experience } from '@/data/experience';
+import ExperienceItem from "@/components/ExperienceItem";
+import { experience } from "@/data/experience";
 
 export default function ExperiencePage() {
     return (

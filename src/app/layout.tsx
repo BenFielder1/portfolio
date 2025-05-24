@@ -1,13 +1,13 @@
-import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Inter } from 'next/font/google';
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: 'Ben Fielder | Software Developer',
-    description: 'Software developer portfolio showcasing projects and skills',
+    title: "Ben Fielder | Software Developer",
+    description: "Portfolio showcasing projects and skills",
 };
 
 export default function RootLayout({

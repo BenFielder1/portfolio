@@ -1,5 +1,5 @@
-import EducationItem from '@/components/EducationItem';
-import { education } from '@/data/education';
+import EducationItem from "@/components/EducationItem";
+import { education } from "@/data/education";
 
 export default function EducationPage() {
     return (

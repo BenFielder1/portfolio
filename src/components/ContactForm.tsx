@@ -1,14 +1,14 @@
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
+        name: "",
+        email: "",
+        message: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -20,22 +20,22 @@ export default function ContactForm() {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
+            const response = await fetch("/api/contact", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             });
 
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                throw new Error("Failed to send message");
             }
 
-            setSubmitStatus('success');
-            setFormData({ name: '', email: '', message: '' });
+            setSubmitStatus("success");
+            setFormData({ name: "", email: "", message: "" });
         } catch {
-            setSubmitStatus('error');
+            setSubmitStatus("error");
         } finally {
             setIsSubmitting(false);
         }
@@ -43,13 +43,13 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
-            {submitStatus === 'success' && (
+            {submitStatus === "success" && (
                 <div className="bg-green-100 text-green-800 p-4 rounded-md mb-4">
                     Thanks for your message! I&#39;ll get back to you soon.
                 </div>
             )}
 
-            {submitStatus === 'error' && (
+            {submitStatus === "error" && (
                 <div className="bg-red-100 text-red-800 p-4 rounded-md mb-4">
                     There was an error sending your message. Please try again.
                 </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition disabled:opacity-50"
             >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? "Sending..." : "Send Message"}
             </button>
         </form>
     );
