@@ -1,36 +1,172 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ben Fielder's Portfolio Website
 
-## Getting Started
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-black?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-teal?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-First, run the development server:
+This project is my personal portfolio website, designed to showcase my skills, experience, and projects as a software developer. Built with Next.js, TypeScript, and Tailwind CSS, it offers a clean, responsive, and interactive experience for visitors.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Project Description
+
+Welcome to my digital space! This portfolio serves as a comprehensive overview of my journey as a software developer. Here you'll find information about my education, work experience, skills, and a selection of projects I've worked on. The site is designed to be easy to navigate and provide a clear picture of my capabilities and interests.  It's built using modern web technologies to ensure a smooth and engaging user experience.
+
+## Features
+
+*   **Clean and Responsive Design:** Built with Tailwind CSS for a modern, mobile-first approach.
+*   **Project Showcase:** Highlights featured projects with descriptions, technologies used, live demos, and GitHub links.
+*   **Skills Overview:**  Categorized display of technical skills with proficiency levels.
+*   **Experience Timeline:** Presents work experience with company details, roles, dates, and technologies used.
+*   **Education Summary:** Details educational background, degrees, and relevant coursework.
+*   **Contact Form:** A functional contact form powered by a Next.js API route and Nodemailer to send messages directly to my email.
+*   **Interactive Games:** Includes playable web games built with Phaser, showcasing game development skills.
+*   **Space Worm Game:** A dedicated page showing games developed as part of Space Worm, my game developer brand.
+*   **A\* Pathfinding Snake Game:** A snake game using the A\* pathfinding algorithm to find the apple autonomously.
+*   **Puzzle Platformer:**  A web based game built with Phaser. It was initially developed as my A level project, but I have continued to maintain it to fix bugs. The game makes use of both my web development and game development abilities.
+
+## File Structure
+
+```
+.
+├── next.config.ts          # Next.js configuration file
+├── next-env.d.ts          # TypeScript environment declarations
+├── src
+│   ├── data
+│   │   ├── skills.ts       # Skills data
+│   │   ├── projects.ts     # Projects data
+│   │   ├── games.ts        # Games data
+│   │   ├── experience.ts   # Experience data
+│   │   └── education.ts    # Education data
+│   ├── components
+│   │   ├── SkillBar.tsx     # Skill bar component
+│   │   ├── ProjectCard.tsx  # Project card component
+│   │   ├── Navbar.tsx       # Navigation bar component
+│   │   ├── Footer.tsx       # Footer component
+│   │   ├── ExperienceItem.tsx# Experience item component
+│   │   ├── EducationItem.tsx # Education item component
+│   │   └── ContactForm.tsx   # Contact form component
+│   ├── app
+│   │   ├── page.tsx         # Home page
+│   │   ├── layout.tsx       # Root layout
+│   │   ├── spaceworm        # Page for space worm
+│   │   │   └── page.tsx
+│   │   ├── skills
+│   │   │   └── page.tsx     # Skills page
+│   │   ├── projects
+│   │   │   ├── page.tsx     # Projects page
+│   │   │   ├── puzzleplatformer
+│   │   │   │   ├── page.tsx  # Puzzle platformer main component
+│   │   │   │   ├── Game1.jsx # Phaser game component 1
+│   │   │   │   ├── Game2.jsx # Phaser game component 2
+│   │   │   │   └── saving
+│   │   │   │       └── saving-system.js # saving game function
+│   │   │   │   └── menus
+│   │   │   │       └── main-menu.js # Menu screens
+│   │   │   ├── planets
+│   │   │   │   └── page.tsx     # Planets three.js sketch page
+│   │   │   ├── birdsongidentifier
+│   │   │   │   └── page.tsx     # Birdsong identifier page
+│   │   │   └── snake
+│   │   │       └── page.tsx     # Snake A* search page
+│   │   ├── experience
+│   │   │   └── page.tsx     # Experience page
+│   │   ├── education
+│   │   │   └── page.tsx     # Education page
+│   │   ├── contact
+│   │   │   └── page.tsx     # Contact page
+│   │   └── about
+│   │       └── page.tsx     # About page
+│   ├── api
+│   │   └── contact
+│   │       └── route.ts     # Contact form API route
+│   └── globals.css        # Global CSS styles
+├── README.md              # This README file
+└── package.json           # project dependencies
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run this project locally, you'll need to have Node.js and npm (or yarn) installed on your machine.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  Clone the repository:
 
-## Learn More
+    ```bash
+    git clone https://github.com/BenFielder1/portfolio-website
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+2.  Navigate to the project directory:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    cd portfolio-website
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  Install the dependencies:
 
-## Deploy on Vercel
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  Start the development server:
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+2.  Open your browser and navigate to `http://localhost:3000`.
+
+## API Reference
+
+The project includes a single API route located at `src/app/api/contact/route.ts`:
+
+### `/api/contact`
+
+*   **Method:** `POST`
+*   **Description:**  Handles form submissions from the contact page. Sends an email using Nodemailer.
+*   **Request Body:**
+
+    ```json
+    {
+        "name": "Your Name",
+        "email": "your.email@example.com",
+        "message": "Your message here"
+    }
+    ```
+
+*   **Response:**
+
+    *   **Success (200 OK):**
+
+        ```json
+        {
+            "success": true
+        }
+        ```
+
+    *   **Error (500 Internal Server Error):**
+
+        ```json
+        {
+            "error": "Error sending email"
+        }
+        ```
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix.
+3.  Make your changes and commit them with descriptive messages.
+4.  Push your changes to your fork.
+5.  Submit a pull request to the main repository.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
