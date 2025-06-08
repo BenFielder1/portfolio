@@ -15,30 +15,24 @@ Welcome to my digital space! This portfolio serves as a comprehensive overview o
 
 *   **Clean and Responsive Design:** Built with Tailwind CSS for a modern, mobile-first approach.
 *   **Project Showcase:** Highlights featured projects with descriptions, technologies used, live demos, and GitHub links.
-*   **Skills Overview:**  Categorized display of technical skills with proficiency levels.
+<!-- *   **Skills Overview:**  Categorized display of technical skills with proficiency levels. -->
 *   **Experience Timeline:** Presents work experience with company details, roles, dates, and technologies used.
 *   **Education Summary:** Details educational background, degrees, and relevant coursework.
 *   **Contact Form:** A functional contact form powered by a Next.js API route and Nodemailer to send messages directly to my email.
-*   **Interactive Games:** Includes playable web games built with Phaser, showcasing game development skills.
-*   **Space Worm Game:** A dedicated page showing games developed as part of Space Worm, my game developer brand.
-*   **A\* Pathfinding Snake Game:** A snake game using the A\* pathfinding algorithm to find the apple autonomously.
+*   **Space Worm:** A dedicated page showing games developed as part of Space Worm, my game developer brand.
 *   **Puzzle Platformer:**  A web based game built with Phaser. It was initially developed as my A level project, but I have continued to maintain it to fix bugs. The game makes use of both my web development and game development abilities.
 
 ## File Structure
 
 ```
 .
-├── next.config.ts          # Next.js configuration file
-├── next-env.d.ts          # TypeScript environment declarations
 ├── src
 │   ├── data
-│   │   ├── skills.ts       # Skills data
 │   │   ├── projects.ts     # Projects data
 │   │   ├── games.ts        # Games data
 │   │   ├── experience.ts   # Experience data
 │   │   └── education.ts    # Education data
 │   ├── components
-│   │   ├── SkillBar.tsx     # Skill bar component
 │   │   ├── ProjectCard.tsx  # Project card component
 │   │   ├── Navbar.tsx       # Navigation bar component
 │   │   ├── Footer.tsx       # Footer component
@@ -48,10 +42,12 @@ Welcome to my digital space! This portfolio serves as a comprehensive overview o
 │   ├── app
 │   │   ├── page.tsx         # Home page
 │   │   ├── layout.tsx       # Root layout
+│   │   ├── globals.css      # Global CSS styles
+│   │   ├── api
+│   │   │   └── contact
+│   │   │       └── route.ts # Contact form API route
 │   │   ├── spaceworm        # Page for space worm
 │   │   │   └── page.tsx
-│   │   ├── skills
-│   │   │   └── page.tsx     # Skills page
 │   │   ├── projects
 │   │   │   ├── page.tsx     # Projects page
 │   │   │   ├── puzzleplatformer
@@ -76,10 +72,6 @@ Welcome to my digital space! This portfolio serves as a comprehensive overview o
 │   │   │   └── page.tsx     # Contact page
 │   │   └── about
 │   │       └── page.tsx     # About page
-│   ├── api
-│   │   └── contact
-│   │       └── route.ts     # Contact form API route
-│   └── globals.css        # Global CSS styles
 ├── README.md              # This README file
 └── package.json           # project dependencies
 
@@ -92,13 +84,13 @@ To run this project locally, you'll need to have Node.js and npm (or yarn) insta
 1.  Clone the repository:
 
     ```bash
-    git clone https://github.com/BenFielder1/portfolio-website
+    git clone https://github.com/BenFielder1/portfolio
     ```
 
 2.  Navigate to the project directory:
 
     ```bash
-    cd portfolio-website
+    cd portfolio
     ```
 
 3.  Install the dependencies:
@@ -157,7 +149,7 @@ The project includes a single API route located at `src/app/api/contact/route.ts
         }
         ```
 
-## Contributing
+<!-- ## Contributing
 
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
@@ -165,7 +157,7 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 2.  Create a new branch for your feature or bug fix.
 3.  Make your changes and commit them with descriptive messages.
 4.  Push your changes to your fork.
-5.  Submit a pull request to the main repository.
+5.  Submit a pull request to the main repository. -->
 
 ## License
 
