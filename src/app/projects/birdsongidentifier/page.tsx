@@ -13,7 +13,7 @@ export default function AboutPage() {
                             url="https://www.youtube.com/watch?v=ykYUyg93UfQ"
                             controls={true}
                             id="video"
-                            fill
+                            fill="true"
                         />
                     </div>
                 </div>

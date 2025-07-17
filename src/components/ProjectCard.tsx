@@ -39,15 +39,13 @@ export default function ProjectCard({
                 <h3 className="text-xl font-bold mb-2">{title}</h3>
                 <p className="text-gray-700 mb-4">{description}</p>
 
-                <div className="mb-4">
-                    <h4 className="text-sm font-semibold mb-2">Technologies:</h4>
-                    <div className="flex flex-wrap gap-2">
-                        {technologies.map((tech) => (
-                            <span key={tech} className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
+                <h4 className="text-sm font-semibold mb-2">Technologies:</h4>
+                <div className="flex flex-wrap gap-2 mb-6">
+                    {technologies.map((tech) => (
+                        <span key={tech} className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">
+                            {tech}
+                        </span>
+                    ))}
                 </div>
 
                 <div className="flex space-x-3">
@@ -55,7 +53,7 @@ export default function ProjectCard({
                         <Link
                             href={demoLink}
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline text-sm"
+                            className="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition"
                         >
                             Live Demo
                         </Link>
@@ -65,12 +63,13 @@ export default function ProjectCard({
                             href={githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-600 hover:underline text-sm"
+                            className="border border-blue-600 text-blue-600 px-3 py-1 rounded-md hover:bg-blue-50 transition"
                         >
                             View Code
                         </Link>
                     )}
                 </div>
+
             </div>
         </div>
     );

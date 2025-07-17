@@ -14,7 +14,7 @@ export const education: Education[] = [
         institution: "University of Warwick",
         degree: "Computer Science BSc",
         date: "2022 - 2025",
-        grade: "Predicted 2:1",
+        grade: "Upper Second Class (2:1)",
         description: "Key Modules:",
         courses: [
             "Machine Learning",
@@ -24,9 +24,6 @@ export const education: Education[] = [
             "Computer Graphics",
             "Web Development",
             "Mobile Robotics",
-            // "Algorithms",
-            // "Logic and Verification",
-            // "Design of Information Structures",
         ],
     },
     {

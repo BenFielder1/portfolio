@@ -10,19 +10,19 @@ export interface Experience {
 export const experience: Experience[] = [
     {
         id: "exp-1",
+        company: "Outlier and DataAnnotation",
+        position: "AI Model Tester/Trainer - Contractor",
+        date: "November 2024 - Present",
+        description: "Worked on several projects to help test and train AI models. Primarily worked on helping them to become better at providing code to prompts.",
+        technologies: ["AI", "Software Development", "Prompt Engineering", "Testing"],
+    },
+    {
+        id: "exp-2",
         company: "Renishaw plc",
         position: "Software Engineer - Summer Placement",
         date: "July 2024 - September 2024",
         description: "Worked on developing CARTO, a .NET desktop application built with C#. Participated in code reviews and agile development processes.",
         technologies: ["C#", ".NET", "SpecFlow", "Agile", "Git"],
-    },
-    {
-        id: "exp-2",
-        company: "Outlier",
-        position: "AI Model Tester - Contractor",
-        date: "Nov 2024 - Present",
-        description: "Worked on several projects to help test and train AI models. Primarily worked on helping them to become better at providing code to prompts.",
-        technologies: ["AI", "Software Development", "Prompt Engineering", "Testing"],
     },
     // {
     //     id: "exp-3",
