@@ -59,5 +59,15 @@ export const projects: Project[] = [
         demoLink: "/projects/birdsongidentifier",
         githubLink: "https://github.com/BenFielder1/snake-with-routing",
         featured: false,
+    },
+    {
+        id: "project-6",
+        title: "GitHub Documentation Generator",
+        description: "A documentation generator that uses AI to generate documentation for codebases. It can be used to generate documentation for any public GitHub repository.",
+        imagePath: "/images/projects/docgen.png",
+        technologies: ["Generative AI", "APIs", "JavaScript"],
+        demoLink: "/projects/documentationgenerator",
+        githubLink: "https://github.com/BenFielder1/snake-with-routing",
+        featured: false,
     }
 ];
