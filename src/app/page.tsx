@@ -18,7 +18,7 @@ export default function Home() {
                         Software Developer
                     </h2>
                     <p className="text-lg text-gray-700 mb-8">
-                        Computer Science student at the University of Warwick, passionate about
+                        Computer Science graduate from the University of Warwick, passionate about
                         building innovative software solutions and exploring new technologies.
                     </p>
                     <div className="flex space-x-4">
