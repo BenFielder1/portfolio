@@ -1,23 +1,22 @@
-export interface Project {
+export interface Game {
     id: string;
     title: string;
     description: string;
     imagePath: string;
-    technologies: string[];
+    platforms: string[];
     demoLink?: string;
     githubLink?: string;
-    featured: boolean;
+    mobileDownloadLink?: string;
 }
 
-export const games: Project[] = [
+export const games: Game[] = [
     {
         id: "project-1",
         title: "Pyramid Numbers",
-        description: "",
+        description: "Merge and add the number tiles in the pyramid to reach the target number at the top of the pyramid. A fun and challenging puzzle game.",
         imagePath: "/images/projects/newfeaturepic.png",
-        technologies: ["React", "Next.js", "Node.js", "three.js"],
+        platforms: ["mobile"],
         demoLink: "/spaceworm/pyramidnumbers",
-        githubLink: "https://github.com/BenFielder1/snake-with-routing",
-        featured: true,
+        mobileDownloadLink: "/a/b",
     }
 ];
