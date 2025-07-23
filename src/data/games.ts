@@ -11,7 +11,7 @@ export interface Game {
 
 export const games: Game[] = [
     {
-        id: "project-1",
+        id: "game-1",
         title: "Pyramid Numbers",
         description: "Merge and add the number tiles in the pyramid to reach the target number at the top of the pyramid. A fun and challenging puzzle game.",
         imagePath: "/images/projects/newfeaturepic.png",

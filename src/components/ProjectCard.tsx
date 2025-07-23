@@ -21,19 +21,12 @@ export default function ProjectCard({
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="relative h-48 w-full">
-                {demoLink && (
-                    <Link
-                        href={demoLink}
-                        rel="noopener noreferrer"
-                    >
-                        <Image
-                            src={imagePath}
-                            alt={title}
-                            fill
-                            style={{ objectFit: "cover" }}
-                        />
-                    </Link>
-                )}
+                <Image
+                    src={imagePath}
+                    alt={title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                />
             </div>
             <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{title}</h3>

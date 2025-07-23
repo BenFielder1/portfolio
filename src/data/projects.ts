@@ -13,11 +13,10 @@ export const projects: Project[] = [
     {
         id: "project-1",
         title: "Space Worm",
-        description: "Developer and publisher name for my games developed using C# and Unity. I have built games targetting multiple platforms including mobile, web and desktop.",
+        description: "Developer and publisher name for my games developed using C# and Unity. I have built games targetting multiple platforms including mobile, web and desktop. The games will be available here soon.",
         imagePath: "/images/projects/logo5.png",
         technologies: ["C#", "Unity Game Engine"],
-        demoLink: "/spaceworm",
-        githubLink: "https://github.com/BenFielder1/snake-with-routing",
+        // demoLink: "/spaceworm",
         featured: true,
     },
     {
@@ -27,7 +26,7 @@ export const projects: Project[] = [
         imagePath: "/images/projects/game2.png",
         technologies: ["JavaScript", "React", "Phaser"],
         demoLink: "/projects/puzzleplatformer",
-        githubLink: "https://github.com/BenFielder1/snake-with-routing",
+        githubLink: "https://github.com/BenFielder1/Ben-Fielder-A-Level-Project",
         featured: true,
     },
     {
@@ -47,17 +46,17 @@ export const projects: Project[] = [
         imagePath: "/images/projects/planets.png",
         technologies: ["JavaScript", "React", "three.js"],
         demoLink: "/projects/planets",
-        githubLink: "https://github.com/BenFielder1/snake-with-routing",
+        githubLink: "https://github.com/BenFielder1/planets-sketch",
         featured: false,
     },
     {
         id: "project-5",
         title: "Portable Bird Song Identifier",
-        description: "A handheld device built on an Arduino Uno to help users identfy birds based on the song and surroundings.",
+        description: "A handheld device built on an Arduino Uno to help users identify birds based on the song and surroundings.",
         imagePath: "/images/projects/birdsongidentifier.jpg",
         technologies: ["Arduino", "C/C++", "Hardware"],
         demoLink: "/projects/birdsongidentifier",
-        githubLink: "https://github.com/BenFielder1/snake-with-routing",
+        // githubLink: "https://github.com/BenFielder1/snake-with-routing",
         featured: false,
     },
     {
@@ -67,7 +66,7 @@ export const projects: Project[] = [
         imagePath: "/images/projects/docgen.png",
         technologies: ["Generative AI", "APIs", "JavaScript"],
         demoLink: "/projects/documentationgenerator",
-        githubLink: "https://github.com/BenFielder1/snake-with-routing",
+        // githubLink: "https://github.com/BenFielder1/snake-with-routing",
         featured: false,
     }
 ];

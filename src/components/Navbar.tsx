@@ -38,7 +38,7 @@ export default function Navbar() {
                     {/* <Link href="/skills" className={`hover:text-blue-600 transition ${pathname === "/skills" ? "text-blue-600 font-medium" : ""}`}>Skills</Link> */}
                     <Link href="/education" className={`hover:text-blue-600 transition ${pathname === "/education" ? "text-blue-600 font-medium" : ""}`}>Education</Link>
                     <Link href="/experience" className={`hover:text-blue-600 transition ${pathname === "/experience" ? "text-blue-600 font-medium" : ""}`}>Experience</Link>
-                    <Link href="/spaceworm" className={`hover:text-blue-600 transition ${pathname === "/spaceworm" ? "text-blue-600 font-medium" : ""}`}>Space Worm</Link>
+                    {/* <Link href="/spaceworm" className={`hover:text-blue-600 transition ${pathname === "/spaceworm" ? "text-blue-600 font-medium" : ""}`}>Space Worm</Link> */}
                     <Link href="/contact" className={`hover:text-blue-600 transition ${pathname === "/contact" ? "text-blue-600 font-medium" : ""}`}>Contact</Link>
                 </nav>
             </div>
@@ -53,7 +53,7 @@ export default function Navbar() {
                         {/* <Link href="/skills" className={`hover:text-blue-600 transition ${pathname === "/skills" ? "text-blue-600 font-medium" : ""}`}>Skills</Link> */}
                         <Link href="/education" className={`hover:text-blue-600 transition ${pathname === "/education" ? "text-blue-600 font-medium" : ""}`}>Education</Link>
                         <Link href="/experience" className={`hover:text-blue-600 transition ${pathname === "/experience" ? "text-blue-600 font-medium" : ""}`}>Experience</Link>
-                        <Link href="/spaceworm" className={`hover:text-blue-600 transition ${pathname === "/spaceworm" ? "text-blue-600 font-medium" : ""}`}>Space Worm</Link>
+                        {/* <Link href="/spaceworm" className={`hover:text-blue-600 transition ${pathname === "/spaceworm" ? "text-blue-600 font-medium" : ""}`}>Space Worm</Link> */}
                         <Link href="/contact" className={`hover:text-blue-600 transition ${pathname === "/contact" ? "text-blue-600 font-medium" : ""}`}>Contact</Link>
                     </div>
                 </nav>
