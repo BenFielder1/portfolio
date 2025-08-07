@@ -15,7 +15,7 @@ export default function Home() {
                         Hi, I&#39;m <span className="text-blue-600">Ben Fielder</span>
                     </h1>
                     <h2 className="text-2xl md:text-3xl text-gray-600 mb-6">
-                        Software Developer
+                        Software Engineer
                     </h2>
                     <p className="text-lg text-gray-700 mb-8">
                         Computer Science graduate from the University of Warwick, passionate about
