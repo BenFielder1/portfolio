@@ -23,13 +23,5 @@ export const experience: Experience[] = [
         date: "July 2024 - September 2024",
         description: "Worked on developing CARTO, a .NET desktop application built with C#. Participated in code reviews and agile development processes.",
         technologies: ["C#", ".NET", "SpecFlow", "Agile", "Git"],
-    },
-    // {
-    //     id: "exp-3",
-    //     company: "Freelance",
-    //     position: "Web Developer",
-    //     date: "2021 - Present",
-    //     description: "Designed and developed websites and web applications for small businesses and individuals. Managed client relationships, requirements gathering, and project timelines. Provided ongoing maintenance and support.",
-    //     technologies: ["React", "Next.js", "JavaScript", "HTML/CSS", "WordPress"],
-    // },
+    }
 ];

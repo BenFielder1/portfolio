@@ -39,18 +39,5 @@ export const education: Education[] = [
             "Computer Science",
             "Physics",
         ],
-    },
-    // {
-    //     id: "education-3",
-    //     institution: "Online Learning",
-    //     degree: "Various Certifications",
-    //     date: "2019 - Present",
-    //     description: "Continuously expanding knowledge through online courses and certifications in various aspects of software development and computer science.",
-    //     courses: [
-    //         "Full Stack Web Development Bootcamp",
-    //         "Advanced React Patterns",
-    //         "AWS Cloud Practitioner",
-    //         "Algorithms Specialization",
-    //     ],
-    // },
+    }
 ];
