@@ -51,9 +51,9 @@ export default function Home() {
 
             {/* Quick Skills Overview */}
             <section className="py-10">
-                <h2 className="text-2xl font-bold mb-6 text-center">Technologies I Work With</h2>
+                <h2 className="text-2xl font-bold mb-6 text-center">Technologies I am Currently Working With</h2>
                 <div className="flex flex-wrap justify-center gap-4">
-                    {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "C#", "Unity Game Engine", "Python"].map((skill) => (
+                    {["TypeScript", "Tailwind CSS", "Next.js", "Node.js", "GitHub", "Vercel"].map((skill) => (
                         <span key={skill} className="bg-gray-200 px-4 py-2 rounded-full text-gray-800">
                             {skill}
                         </span>
