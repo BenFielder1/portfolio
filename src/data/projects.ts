@@ -13,9 +13,11 @@ export const projects: Project[] = [
     {
         id: 1,
         title: "Space Worm",
-        description: "Developer and publisher name for my games developed using C# and Unity. I have built games targetting multiple platforms including mobile, web and desktop. The games will be available here soon.",
-        imagePath: "/images/projects/logo5.png",
-        technologies: ["C#", "Unity Game Engine"],
+        description: "Developer and publisher name for my games developed using C# and Unity. I have built games targetting multiple platforms including mobile, web and desktop.",
+        imagePath: "/images/projects/spaceworm.png",
+        technologies: ["C#", "Unity Game Engine", "TypeScript", "Next.js"],
+        demoLink: "https://spaceworm.co.uk/",
+        githubLink: "https://github.com/BenFielder1/Space-Worm",
         featured: true,
     },
     {
@@ -34,8 +36,8 @@ export const projects: Project[] = [
         description: "A web based game built using Phaser. It was initially developed as my A level project, but I have continued to maintain it to fix bugs.",
         imagePath: "/images/projects/game2.png",
         technologies: ["JavaScript", "React", "Phaser"],
-        demoLink: "/projects/puzzleplatformer",
-        githubLink: "https://github.com/BenFielder1/Ben-Fielder-A-Level-Project",
+        demoLink: "https://platformer.benfielder.com/",
+        githubLink: "https://github.com/BenFielder1/Puzzle-Platformer",
         featured: true,
     },
     {
