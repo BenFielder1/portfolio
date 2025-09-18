@@ -52,10 +52,10 @@ export const projects: Project[] = [
     {
         id: 5,
         title: "Portable Bird Song Identifier",
-        description: "A handheld device built on an Arduino Uno to help users identify birds based on the song and surroundings.",
+        description: "A handheld device built on an Arduino Uno to help users identify birds by asking questions based on the song and surroundings.",
         imagePath: "/images/projects/birdsongidentifier.jpg",
         technologies: ["Arduino", "C/C++", "Hardware"],
-        demoLink: "/projects/birdsongidentifier",
+        demoLink: "https://www.youtube.com/watch?v=ykYUyg93UfQ",
         featured: false,
     }
 ];
