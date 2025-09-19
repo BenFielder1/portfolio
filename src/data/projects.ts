@@ -59,4 +59,14 @@ export const projects: Project[] = [
         demoLink: "https://www.youtube.com/watch?v=ykYUyg93UfQ",
         featured: false,
     }
+    ,
+    {
+        id: 6,
+        title: "JSEden Notebook VS Code Extension",
+        description: "A VS Code extension that allows you to create and edit JS-Eden notebooks. This can be used to create visual and interactive learning tools.",
+        imagePath: "/images/projects/jsedennotebook.png",
+        technologies: ["JavaScript", "VS Code API", "JS-Eden"],
+        githubLink: "https://github.com/BenFielder1/JSEden-Notebook",
+        featured: false,
+    }
 ];
