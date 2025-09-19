@@ -9,7 +9,7 @@ This project is my personal portfolio website, designed to showcase my skills, e
 
 ## Project Description
 
-Welcome to my digital space! This portfolio serves as a comprehensive overview of my journey as a software developer. Here you'll find information about my education, work experience, skills, and a selection of projects I've worked on. The site is designed to be easy to navigate and provide a clear picture of my capabilities and interests.  It's built using modern web technologies to ensure a smooth and engaging user experience.
+Welcome to my digital space! This portfolio serves as a comprehensive overview of my journey as a software developer. Here you'll find information about my education, work experience, skills, and a selection of projects I've worked on. The site is designed to be easy to navigate and provide a clear picture of my capabilities and interests. It's built using modern web technologies to ensure a smooth and engaging user experience.
 
 ## Features
 
@@ -18,7 +18,6 @@ Welcome to my digital space! This portfolio serves as a comprehensive overview o
 *   **Experience Timeline:** Presents work experience with company details, roles, dates, and technologies used.
 *   **Education Summary:** Details educational background, degrees, and relevant coursework.
 *   **Contact Form:** A functional contact form powered by a Next.js API route and Nodemailer to send messages directly to my email.
-*   **Space Worm:** A dedicated page showing games developed as part of Space Worm, my game developer brand.
 
 ## Installation
 
