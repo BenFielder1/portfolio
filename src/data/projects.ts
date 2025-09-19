@@ -46,7 +46,8 @@ export const projects: Project[] = [
         description: "A documentation generator that uses AI to generate documentation for codebases. It can be used to generate documentation for any public GitHub repository.",
         imagePath: "/images/projects/docgen.png",
         technologies: ["Generative AI", "APIs", "JavaScript"],
-        demoLink: "/projects/documentationgenerator",
+        demoLink: "https://docgen.benfielder.com/",
+        githubLink: "https://github.com/BenFielder1/documentation-generator",
         featured: false,
     },
     {
