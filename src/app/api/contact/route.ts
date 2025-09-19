@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const USER = "bencfielder@gmail.com";
-const PASS = "wlrg cojv beny peyv";
-const TO = "bencfielder@outlook.com";
+const USER = process.env.EMAIL_USER;
+const PASS = process.env.EMAIL_PASS;
+const TO = process.env.EMAIL_TO;
 
 export async function POST(request: Request) {
     try {
