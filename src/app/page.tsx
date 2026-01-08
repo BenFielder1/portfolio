@@ -31,10 +31,9 @@ export default function Home() {
                             <div className="animate-in opacity-0">
                                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--glass-bg)] border border-[var(--glass-border)] text-sm font-mono">
                                     <span className="relative flex h-2 w-2">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent-cyan)]"></span>
                                     </span>
-                                    Available for opportunities
+                                    Software Developer @ Content Guru
                                 </span>
                             </div>
 

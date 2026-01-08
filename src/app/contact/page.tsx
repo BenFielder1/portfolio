@@ -32,8 +32,9 @@ export default function ContactPage() {
                             <div className="glass-card p-6">
                                 <p className="text-[var(--text-secondary)] leading-relaxed">
                                     I&apos;m currently working as a Graduate Software Developer at 
-                                    Content Guru, but I&apos;m always open to discussing new opportunities, 
-                                    freelance projects, or just having a chat about technology.
+                                    Content Guru. Feel free to reach out if you&apos;d like to discuss 
+                                    interesting projects, collaborate on something, or just have a chat 
+                                    about technology!
                                 </p>
                             </div>
 
@@ -91,18 +92,17 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            {/* Availability status */}
+                            {/* Response time info */}
                             <div className="glass-card p-6 border-[var(--accent-cyan)]/30 border">
                                 <div className="flex items-center gap-3 mb-3">
                                     <span className="relative flex h-3 w-3">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-[var(--accent-cyan)]"></span>
                                     </span>
-                                    <span className="font-semibold text-green-400">Available for opportunities</span>
+                                    <span className="font-semibold text-[var(--accent-cyan)]">Response Time</span>
                                 </div>
                                 <p className="text-sm text-[var(--text-secondary)]">
-                                    I typically respond within 24-48 hours. For urgent matters, 
-                                    please mention it in your message.
+                                    I typically respond within 24-48 hours. Feel free to reach out 
+                                    if you&apos;d like to connect or collaborate on something interesting!
                                 </p>
                             </div>
                         </div>
