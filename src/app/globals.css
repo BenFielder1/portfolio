@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
     /* Dark theme palette - Midnight with electric accents */
@@ -41,7 +40,7 @@ html {
 }
 
 body {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-outfit), 'Outfit', sans-serif;
     color: var(--text-primary);
     background: var(--bg-primary);
     min-height: 100vh;
@@ -74,7 +73,7 @@ body {
 
 /* Typography utilities */
 .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-dm-sans), 'DM Sans', monospace;
 }
 
 .text-gradient {
@@ -167,7 +166,7 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     color: var(--text-primary);
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-outfit), 'Outfit', sans-serif;
     transition: all 0.3s ease;
 }
 
