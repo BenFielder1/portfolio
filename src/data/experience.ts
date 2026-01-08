@@ -10,12 +10,20 @@ export interface Experience {
 export const experience: Experience[] = [
     {
         id: "exp-1",
-        company: "Outlier and DataAnnotation",
-        position: "AI Model Tester/Trainer - Contractor",
-        date: "November 2024 - Present",
-        description: "Worked on several projects to help test and train AI models. Primarily worked on helping them to become better at providing code to prompts.",
-        technologies: ["AI", "Software Development", "Prompt Engineering", "Testing"],
+        company: "Content Guru (Redwood Technologies Ltd)",
+        position: "Graduate Software Developer",
+        date: "November 2025 - Present",
+        description: "Worked in the Integrate team to help build bespoke integrations between the cloud contact centre platform and third-party software.",
+        technologies: ["C#", ".NET", "TypeScript", "React"],
     },
+    // {
+    //     id: "exp-1",
+    //     company: "Outlier and DataAnnotation",
+    //     position: "AI Model Tester/Trainer - Contractor",
+    //     date: "November 2024 - Present",
+    //     description: "Worked on several projects to help test and train AI models. Primarily worked on helping them to become better at providing code to prompts.",
+    //     technologies: ["AI", "Software Development", "Prompt Engineering", "Testing"],
+    // },
     {
         id: "exp-2",
         company: "Renishaw plc",

@@ -15,11 +15,11 @@ export default function Home() {
                         Hi, I&#39;m <span className="text-blue-600">Ben Fielder</span>
                     </h1>
                     <h2 className="text-2xl md:text-3xl text-gray-600 mb-6">
-                        Software Engineer
+                        Software Developer
                     </h2>
                     <p className="text-lg text-gray-700 mb-8">
-                        Computer Science graduate from the University of Warwick, passionate about
-                        building innovative software solutions and exploring new technologies.
+                        Graduate Software Developer at Content Guru. 
+                        Passionate about building innovative software solutions and exploring new technologies.
                     </p>
                     <div className="flex space-x-4">
                         <Link
@@ -53,7 +53,7 @@ export default function Home() {
             <section className="py-10">
                 <h2 className="text-2xl font-bold mb-6 text-center">Technologies I am Currently Working With</h2>
                 <div className="flex flex-wrap justify-center gap-4">
-                    {["TypeScript", "Tailwind CSS", "Next.js", "Node.js", "GitHub", "Vercel"].map((skill) => (
+                    {["TypeScript", "Next.js", "Tailwind CSS", "Vercel", "GitHub"].map((skill) => (
                         <span key={skill} className="bg-gray-200 px-4 py-2 rounded-full text-gray-800">
                             {skill}
                         </span>
