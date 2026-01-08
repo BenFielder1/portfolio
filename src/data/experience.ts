@@ -13,7 +13,7 @@ export const experience: Experience[] = [
         company: "Content Guru (Redwood Technologies Ltd)",
         position: "Graduate Software Developer",
         date: "November 2025 - Present",
-        description: "Worked in the Integrate team to help build bespoke integrations between the cloud contact centre platform and third-party software.",
+        description: "Worked in the Integrate team to help build bespoke integrations between the contact centre platform and third-party software.",
         technologies: ["C#", ".NET", "TypeScript", "React"],
     },
     // {

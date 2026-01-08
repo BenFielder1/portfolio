@@ -1,13 +1,18 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Inter } from "next/font/google";
+import type { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
+export const metadata: Metadata = {
     title: "Ben Fielder | Software Engineer",
-    description: "Portfolio showcasing projects and skills",
+    description: "Portfolio showcasing projects, skills, and experience in software development",
+    keywords: ["Software Engineer", "Web Developer", "Portfolio", "React", "Next.js", "TypeScript"],
+    authors: [{ name: "Ben Fielder" }],
+    openGraph: {
+        title: "Ben Fielder | Software Engineer",
+        description: "Portfolio showcasing projects, skills, and experience in software development",
+        type: "website",
+    },
 };
 
 export default function RootLayout({
@@ -17,9 +22,13 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body>
+                {/* Animated background elements */}
+                <div className="bg-mesh" aria-hidden="true" />
+                <div className="bg-grid" aria-hidden="true" />
+                
                 <Navbar />
-                <main className="min-h-screen pt-20 pb-12">
+                <main className="min-h-screen pt-24 pb-16 relative z-10">
                     {children}
                 </main>
                 <Footer />

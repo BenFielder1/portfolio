@@ -3,9 +3,27 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
+const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/projects", label: "Projects" },
+    { href: "/experience", label: "Experience" },
+    { href: "/education", label: "Education" },
+    { href: "/contact", label: "Contact" },
+];
+
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [hasScrolled, setHasScrolled] = useState(false);
     const pathname = usePathname();
+
+    // Handle scroll effect
+    useEffect(() => {
+        const handleScroll = () => {
+            setHasScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     // Close mobile menu when route changes
     useEffect(() => {
@@ -13,51 +31,105 @@ export default function Navbar() {
     }, [pathname]);
 
     return (
-        <header className="fixed w-full bg-white shadow-md z-50">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <Link href="/" className="text-xl font-bold">
-                    Ben Fielder
+        <header
+            className={`fixed w-full z-50 transition-all duration-500 ${
+                hasScrolled
+                    ? "py-3 bg-[rgba(10,10,15,0.8)] backdrop-blur-xl border-b border-[var(--glass-border)]"
+                    : "py-5 bg-transparent"
+            }`}
+        >
+            <div className="container mx-auto px-6 flex justify-between items-center">
+                {/* Logo */}
+                <Link href="/" className="group flex items-center gap-2">
+                    <span className="relative flex h-10 w-10 items-center justify-center">
+                        <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-[var(--accent-cyan)] to-[var(--accent-purple)] opacity-80 group-hover:opacity-100 transition-opacity" />
+                        <span className="relative font-mono font-bold text-[var(--bg-primary)]">BF</span>
+                    </span>
+                    <span className="font-semibold text-lg hidden sm:block">
+                        Ben <span className="text-gradient">Fielder</span>
+                    </span>
                 </Link>
 
                 {/* Mobile menu button */}
                 <button
-                    className="md:hidden"
+                    className="md:hidden relative w-10 h-10 flex items-center justify-center"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     aria-label="Toggle menu"
+                    aria-expanded={isMenuOpen}
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} />
-                    </svg>
+                    <div className="relative w-6 h-5 flex flex-col justify-between">
+                        <span
+                            className={`block h-0.5 w-full bg-current transition-all duration-300 ${
+                                isMenuOpen ? "rotate-45 translate-y-2" : ""
+                            }`}
+                        />
+                        <span
+                            className={`block h-0.5 w-full bg-current transition-all duration-300 ${
+                                isMenuOpen ? "opacity-0" : ""
+                            }`}
+                        />
+                        <span
+                            className={`block h-0.5 w-full bg-current transition-all duration-300 ${
+                                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                            }`}
+                        />
+                    </div>
                 </button>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex space-x-8">
-                    <Link href="/" className={`hover:text-blue-600 transition ${pathname === "/" ? "text-blue-600 font-medium" : ""}`}>Home</Link>
-                    {/* <Link href="/about" className={`hover:text-blue-600 transition ${pathname === "/about" ? "text-blue-600 font-medium" : ""}`}>About</Link> */}
-                    <Link href="/projects" className={`hover:text-blue-600 transition ${pathname === "/projects" ? "text-blue-600 font-medium" : ""}`}>Projects</Link>
-                    {/* <Link href="/skills" className={`hover:text-blue-600 transition ${pathname === "/skills" ? "text-blue-600 font-medium" : ""}`}>Skills</Link> */}
-                    <Link href="/education" className={`hover:text-blue-600 transition ${pathname === "/education" ? "text-blue-600 font-medium" : ""}`}>Education</Link>
-                    <Link href="/experience" className={`hover:text-blue-600 transition ${pathname === "/experience" ? "text-blue-600 font-medium" : ""}`}>Experience</Link>
-                    {/* <Link href="/spaceworm" className={`hover:text-blue-600 transition ${pathname === "/spaceworm" ? "text-blue-600 font-medium" : ""}`}>Space Worm</Link> */}
-                    <Link href="/contact" className={`hover:text-blue-600 transition ${pathname === "/contact" ? "text-blue-600 font-medium" : ""}`}>Contact</Link>
+                <nav className="hidden md:flex items-center gap-1">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            className={`nav-link px-4 py-2 rounded-lg transition-colors ${
+                                pathname === item.href ? "active text-[var(--text-primary)]" : ""
+                            }`}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                    
+                    {/* CTA Button */}
+                    <Link
+                        href="/contact"
+                        className="ml-4 px-5 py-2 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-purple)] text-[var(--bg-primary)] font-semibold rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:-translate-y-0.5"
+                    >
+                        Let&apos;s Talk
+                    </Link>
                 </nav>
             </div>
 
             {/* Mobile Navigation */}
-            {isMenuOpen && (
-                <nav className="md:hidden bg-white w-full py-4 px-4 shadow-lg">
-                    <div className="flex flex-col space-y-4">
-                        <Link href="/" className={`hover:text-blue-600 transition ${pathname === "/" ? "text-blue-600 font-medium" : ""}`}>Home</Link>
-                        {/* <Link href="/about" className={`hover:text-blue-600 transition ${pathname === "/about" ? "text-blue-600 font-medium" : ""}`}>About</Link> */}
-                        <Link href="/projects" className={`hover:text-blue-600 transition ${pathname === "/projects" ? "text-blue-600 font-medium" : ""}`}>Projects</Link>
-                        {/* <Link href="/skills" className={`hover:text-blue-600 transition ${pathname === "/skills" ? "text-blue-600 font-medium" : ""}`}>Skills</Link> */}
-                        <Link href="/education" className={`hover:text-blue-600 transition ${pathname === "/education" ? "text-blue-600 font-medium" : ""}`}>Education</Link>
-                        <Link href="/experience" className={`hover:text-blue-600 transition ${pathname === "/experience" ? "text-blue-600 font-medium" : ""}`}>Experience</Link>
-                        {/* <Link href="/spaceworm" className={`hover:text-blue-600 transition ${pathname === "/spaceworm" ? "text-blue-600 font-medium" : ""}`}>Space Worm</Link> */}
-                        <Link href="/contact" className={`hover:text-blue-600 transition ${pathname === "/contact" ? "text-blue-600 font-medium" : ""}`}>Contact</Link>
-                    </div>
+            <div
+                className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+                    isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                }`}
+            >
+                <nav className="container mx-auto px-6 py-6 flex flex-col gap-2 bg-[rgba(10,10,15,0.95)] backdrop-blur-xl border-t border-[var(--glass-border)]">
+                    {navItems.map((item, index) => (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            className={`px-4 py-3 rounded-lg transition-all duration-300 ${
+                                pathname === item.href
+                                    ? "bg-[var(--glass-highlight)] text-[var(--accent-cyan)]"
+                                    : "text-[var(--text-secondary)] hover:bg-[var(--glass-bg)] hover:text-[var(--text-primary)]"
+                            }`}
+                            style={{ animationDelay: `${index * 50}ms` }}
+                        >
+                            {item.label}
+                        </Link>
+                    ))}
+                    
+                    <Link
+                        href="/contact"
+                        className="mt-2 px-4 py-3 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-purple)] text-[var(--bg-primary)] font-semibold rounded-lg text-center"
+                    >
+                        Let&apos;s Talk
+                    </Link>
                 </nav>
-            )}
+            </div>
         </header>
     );
 }
