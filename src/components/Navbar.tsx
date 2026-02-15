@@ -89,14 +89,6 @@ export default function Navbar() {
                             {item.label}
                         </Link>
                     ))}
-                    
-                    {/* CTA Button */}
-                    <Link
-                        href="/contact"
-                        className="ml-4 px-5 py-2 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-purple)] text-[var(--bg-primary)] font-semibold rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:-translate-y-0.5"
-                    >
-                        Let&apos;s Talk
-                    </Link>
                 </nav>
             </div>
 
@@ -121,13 +113,6 @@ export default function Navbar() {
                             {item.label}
                         </Link>
                     ))}
-                    
-                    <Link
-                        href="/contact"
-                        className="mt-2 px-4 py-3 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-purple)] text-[var(--bg-primary)] font-semibold rounded-lg text-center"
-                    >
-                        Let&apos;s Talk
-                    </Link>
                 </nav>
             </div>
         </header>
