@@ -44,15 +44,15 @@ export default function Home() {
                                     <span className="text-gradient">Ben Fielder</span>
                                 </h1>
                                 <h2 className="animate-in opacity-0 animate-delay-2 text-2xl md:text-3xl text-[var(--text-secondary)] font-medium">
-                                    Software Engineer crafting{" "}
-                                    <span className="text-gradient-secondary">digital experiences</span>
+                                    {/* Software Engineer crafting{" "} */}
+                                    <span className="text-gradient-secondary">Software Engineer</span>
                                 </h2>
                             </div>
 
                             {/* Description */}
                             <p className="animate-in opacity-0 animate-delay-3 text-lg text-[var(--text-secondary)] max-w-xl leading-relaxed">
                                 Graduate Software Developer at Content Guru, passionate about building 
-                                innovative software solutions. From cloud integrations to game development, 
+                                innovative software solutions. From full stack web applications to game development, 
                                 I love exploring the boundaries of technology.
                             </p>
 
@@ -126,8 +126,8 @@ export default function Home() {
                                     <span className="text-sm font-medium">Game Dev</span>
                                 </div>
                                 <div className="absolute -top-4 -right-4 glass-card px-4 py-2 flex items-center gap-2 animate-float" style={{ animationDelay: "-4s" }}>
-                                    <span className="text-2xl">☁️</span>
-                                    <span className="text-sm font-medium">Cloud</span>
+                                    <span className="text-2xl">🖥️</span>
+                                    <span className="text-sm font-medium">Full Stack</span>
                                 </div>
                             </div>
                         </div>
@@ -198,32 +198,6 @@ export default function Home() {
                                 index={index}
                             />
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="py-24 relative">
-                <div className="container mx-auto px-6">
-                    <div className="glass-card p-12 md:p-16 text-center relative overflow-hidden">
-                        {/* Background gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-cyan)]/10 via-transparent to-[var(--accent-purple)]/10" />
-                        
-                        <div className="relative z-10">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                Let&apos;s Build Something{" "}
-                                <span className="text-gradient">Amazing</span>
-                            </h2>
-                            <p className="text-[var(--text-secondary)] mb-8 max-w-lg mx-auto">
-                                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                            </p>
-                            <Link href="/contact" className="btn-primary">
-                                Start a Conversation
-                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                </svg>
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </section>
