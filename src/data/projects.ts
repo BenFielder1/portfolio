@@ -16,7 +16,7 @@ export const projects: Project[] = [
         description: "Developer and publisher name for my games developed using C# and Unity. I have built games targetting multiple platforms including mobile, web and desktop.",
         imagePath: "/images/projects/spaceworm.png",
         technologies: ["C#", "Unity Game Engine", "TypeScript", "Next.js"],
-        demoLink: "https://spaceworm.co.uk/",
+        demoLink: "https://games.benfielder.com/",
         githubLink: "https://github.com/BenFielder1/Space-Worm",
         featured: true,
     },
