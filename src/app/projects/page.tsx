@@ -84,48 +84,6 @@ export default function ProjectsPage() {
                     </div>
                 </section>
             )}
-
-            {/* Stats section */}
-            <section className="py-16 relative">
-                <div className="container mx-auto px-6">
-                    <div className="glass-card p-8 md:p-12">
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                            <div>
-                                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">
-                                    {projects.length}
-                                </div>
-                                <div className="text-[var(--text-secondary)] text-sm">
-                                    Total Projects
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-4xl md:text-5xl font-bold text-gradient-secondary mb-2">
-                                    {new Set(projects.flatMap(p => p.technologies)).size}
-                                </div>
-                                <div className="text-[var(--text-secondary)] text-sm">
-                                    Technologies Used
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">
-                                    {projects.filter(p => p.demoLink).length}
-                                </div>
-                                <div className="text-[var(--text-secondary)] text-sm">
-                                    Live Demos
-                                </div>
-                            </div>
-                            <div>
-                                <div className="text-4xl md:text-5xl font-bold text-gradient-secondary mb-2">
-                                    {projects.filter(p => p.githubLink).length}
-                                </div>
-                                <div className="text-[var(--text-secondary)] text-sm">
-                                    Open Source
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 }

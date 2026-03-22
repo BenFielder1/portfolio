@@ -12,12 +12,11 @@ export interface Project {
 export const projects: Project[] = [
     {
         id: 1,
-        title: "Space Worm",
-        description: "Developer and publisher name for my games developed using C# and Unity. I have built games targetting multiple platforms including mobile, web and desktop.",
-        imagePath: "/images/projects/spaceworm.png",
-        technologies: ["C#", "Unity Game Engine", "TypeScript", "Next.js"],
-        demoLink: "https://games.benfielder.com/",
-        githubLink: "https://github.com/BenFielder1/Space-Worm",
+        title: "AIDE Platform",
+        description: "An AI-driven orchestrator for developing new apps and building new features. It follows an approval-gated 5-step software development lifecycle: idea refinement, technical specification, implementation plan, execution, and review. The platform supports multiple review cycles to iteratively meet the specification, and includes a git service for creating new repositories, branching existing ones, and merging into master once a review is approved.",
+        imagePath: "/images/projects/aide.png",
+        technologies: ["AI Agents", "TypeScript", "Next.js", "Git"],
+        githubLink: "https://github.com/BenFielder1/AIDE-Platform",
         featured: true,
     },
     {
@@ -31,12 +30,12 @@ export const projects: Project[] = [
     },
     {
         id: 3,
-        title: "GitHub Documentation Generator",
-        description: "A documentation generator that uses AI to generate documentation for codebases. It can be used to generate documentation for any public GitHub repository.",
-        imagePath: "/images/projects/documentationgenerator.png",
-        technologies: ["Generative AI", "APIs", "JavaScript"],
-        demoLink: "https://docgen.benfielder.com/",
-        githubLink: "https://github.com/BenFielder1/documentation-generator",
+        title: "Space Worm",
+        description: "Developer and publisher name for my games developed using C# and Unity. I have built games targetting multiple platforms including mobile, web and desktop.",
+        imagePath: "/images/projects/spaceworm.png",
+        technologies: ["C#", "Unity Game Engine", "TypeScript", "Next.js"],
+        demoLink: "https://games.benfielder.com/",
+        githubLink: "https://github.com/BenFielder1/Space-Worm",
         featured: true,
     },
     {
@@ -50,6 +49,16 @@ export const projects: Project[] = [
     },
     {
         id: 5,
+        title: "GitHub Documentation Generator",
+        description: "A documentation generator that uses AI to generate documentation for codebases. It can be used to generate documentation for any public GitHub repository.",
+        imagePath: "/images/projects/documentationgenerator.png",
+        technologies: ["Generative AI", "APIs", "JavaScript"],
+        demoLink: "https://docgen.benfielder.com/",
+        githubLink: "https://github.com/BenFielder1/documentation-generator",
+        featured: false,
+    },
+    {
+        id: 6,
         title: "Sketch Vault",
         description: "A web app housing a collection of interactive sketches made using three.js and p5.js.",
         imagePath: "/images/projects/sketchvault.png",
@@ -59,7 +68,7 @@ export const projects: Project[] = [
         featured: false,
     },
     {
-        id: 6,
+        id: 7,
         title: "2D Puzzle Platformer",
         description: "A web based game built using Phaser. It was initially developed as my A level project, but I have continued to maintain it to fix bugs.",
         imagePath: "/images/projects/puzzleplatformer.png",
