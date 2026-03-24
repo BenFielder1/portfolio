@@ -46,7 +46,7 @@ export default function Navbar() {
                         <span className="relative font-mono font-bold text-[var(--bg-primary)]">BF</span>
                     </span>
                     <span className="font-semibold text-lg hidden sm:block">
-                        Ben <span className="text-gradient">Fielder</span>
+                        <span className="text-gradient">Ben Fielder</span>
                     </span>
                 </Link>
 

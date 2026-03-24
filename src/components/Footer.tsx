@@ -44,7 +44,7 @@ export default function Footer() {
                                 <span className="relative font-mono font-bold text-[var(--bg-primary)]">BF</span>
                             </span>
                             <span className="font-semibold text-lg">
-                                Ben <span className="text-gradient">Fielder</span>
+                                <span className="text-gradient">Ben Fielder</span>
                             </span>
                         </Link>
                         <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-xs">
