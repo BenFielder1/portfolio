@@ -1,3 +1,8 @@
+export interface Role {
+    position: string;
+    date: string;
+}
+
 export interface Experience {
     id: string;
     company: string;
@@ -5,25 +10,28 @@ export interface Experience {
     date: string;
     description: string;
     technologies: string[];
+    roles?: Role[];
 }
 
 export const experience: Experience[] = [
     {
         id: "exp-1",
         company: "Content Guru (Redwood Technologies Ltd)",
-        position: "Graduate Software Developer",
+        position: "Software Engineer Level 1",
         date: "November 2025 - Present",
-        description: "Worked in the Integrate team to help build bespoke integrations between the contact centre platform and third-party software.",
+        description: "Working in the Integrate team to help build bespoke integrations between the contact centre platform and third-party software.",
         technologies: ["C#", ".NET", "TypeScript", "React"],
+        roles: [
+            {
+                position: "Software Engineer Level 1",
+                date: "February 2026 - Present",
+            },
+            {
+                position: "Graduate Software Developer",
+                date: "November 2025 - February 2026",
+            },
+        ],
     },
-    // {
-    //     id: "exp-1",
-    //     company: "Outlier and DataAnnotation",
-    //     position: "AI Model Tester/Trainer - Contractor",
-    //     date: "November 2024 - Present",
-    //     description: "Worked on several projects to help test and train AI models. Primarily worked on helping them to become better at providing code to prompts.",
-    //     technologies: ["AI", "Software Development", "Prompt Engineering", "Testing"],
-    // },
     {
         id: "exp-2",
         company: "Renishaw plc",

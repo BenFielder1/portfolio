@@ -33,7 +33,7 @@ export default function Home() {
                                     <span className="relative flex h-2 w-2">
                                         <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent-cyan)]"></span>
                                     </span>
-                                    Software Developer @ Content Guru
+                                    Software Engineer @ Content Guru
                                 </span>
                             </div>
 
@@ -44,14 +44,13 @@ export default function Home() {
                                     <span className="text-gradient">Ben Fielder</span>
                                 </h1>
                                 <h2 className="animate-in opacity-0 animate-delay-2 text-2xl md:text-3xl text-[var(--text-secondary)] font-medium">
-                                    {/* Software Engineer crafting{" "} */}
                                     <span className="text-gradient-secondary">Software Engineer</span>
                                 </h2>
                             </div>
 
                             {/* Description */}
                             <p className="animate-in opacity-0 animate-delay-3 text-lg text-[var(--text-secondary)] max-w-xl leading-relaxed">
-                                Graduate Software Developer at Content Guru, passionate about building 
+                                Software Engineer at Content Guru, passionate about building 
                                 innovative software solutions. From full stack web applications to game development, 
                                 I love exploring the boundaries of technology.
                             </p>

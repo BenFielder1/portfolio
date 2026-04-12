@@ -1,18 +1,23 @@
+import PromotionCard from "@/components/PromotionCard";
+import { Role } from "@/data/experience";
+
 interface ExperienceItemProps {
     company: string;
-    position: string;
     date: string;
-    description: string;
-    technologies: string[];
+    position?: string;
+    description?: string;
+    technologies?: string[];
+    roles?: Role[];
     isLast?: boolean;
 }
 
 export default function ExperienceItem({
     company,
-    position,
     date,
+    position,
     description,
     technologies,
+    roles,
     isLast = false,
 }: ExperienceItemProps) {
     return (
@@ -31,7 +36,7 @@ export default function ExperienceItem({
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
                         <h3 className="text-xl font-bold group-hover:text-gradient transition-all duration-300">
-                            {position}
+                            {roles ? roles[0].position : position}
                         </h3>
                         <p className="text-[var(--accent-cyan)] font-medium">
                             {company}
@@ -45,18 +50,31 @@ export default function ExperienceItem({
                     </span>
                 </div>
 
-                {/* Description */}
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-6">
-                    {description}
-                </p>
+                <div className="mt-2">
+                    <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+                        {description}
+                    </p>
+                </div>
 
-                {/* Technologies */}
-                <div>
+                {/* Roles (multiple promotions) */}
+                {roles && (
+                    <div className="mt-4">
+                        {roles.map((role, index) => (
+                            <PromotionCard
+                                key={role.position}
+                                position={role.position}
+                                date={role.date}
+                            />
+                        ))}
+                    </div>
+                )}
+
+                <div className="mt-4">
                     <h4 className="text-xs uppercase tracking-wider text-[var(--text-muted)] mb-3 font-mono">
                         Technologies
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                        {technologies.map((tech) => (
+                        {technologies?.map((tech) => (
                             <span key={tech} className="tech-badge">
                                 {tech}
                             </span>

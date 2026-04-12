@@ -42,11 +42,11 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="group flex items-center gap-2">
                     <span className="relative flex h-10 w-10 items-center justify-center">
-                        <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-[var(--accent-cyan)] to-[var(--accent-purple)] opacity-80 group-hover:opacity-100 transition-opacity" />
+                        <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-[var(--accent-cyan)] to-[var(--accent-purple)] opacity-100" />
                         <span className="relative font-mono font-bold text-[var(--bg-primary)]">BF</span>
                     </span>
                     <span className="font-semibold text-lg hidden sm:block">
-                        <span className="text-gradient">Ben Fielder</span>
+                        Ben Fielder
                     </span>
                 </Link>
 

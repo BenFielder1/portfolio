@@ -31,10 +31,11 @@ export default function ExperiencePage() {
                             <ExperienceItem
                                 key={item.id}
                                 company={item.company}
-                                position={item.position}
                                 date={item.date}
+                                position={item.position}
                                 description={item.description}
                                 technologies={item.technologies}
+                                roles={item.roles}
                                 isLast={index === experience.length - 1}
                             />
                         ))}
