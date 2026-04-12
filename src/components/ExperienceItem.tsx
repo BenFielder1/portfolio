@@ -36,7 +36,7 @@ export default function ExperienceItem({
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
                         <h3 className="text-xl font-bold group-hover:text-gradient transition-all duration-300">
-                            {roles ? roles[0].position : position}
+                            {position}
                         </h3>
                         <p className="text-[var(--accent-cyan)] font-medium">
                             {company}
