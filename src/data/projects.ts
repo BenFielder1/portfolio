@@ -95,7 +95,7 @@ export const projects: Project[] = [
         category: "Games",
         demoLink: "https://games.benfielder.com/",
         demoLabel: "Play",
-        githubLink: "https://github.com/BenFielder1/Space-Worm-Game-Portal",
+        // githubLink: "https://github.com/BenFielder1/Space-Worm-Game-Portal",
         featured: false,
     },
     {
