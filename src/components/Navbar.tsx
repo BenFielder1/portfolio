@@ -1,116 +1,102 @@
 "use client";
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 
-const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/experience", label: "Experience" },
-    { href: "/education", label: "Education" },
-    { href: "/contact", label: "Contact" },
-];
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
+import { Close, Menu } from "@/components/Icons";
+import { navItems } from "@/data/nav";
+import { profile } from "@/data/profile";
+
+function subscribeToScroll(callback: () => void) {
+    window.addEventListener("scroll", callback, { passive: true });
+    return () => window.removeEventListener("scroll", callback);
+}
 
 export default function Navbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [hasScrolled, setHasScrolled] = useState(false);
     const pathname = usePathname();
+    const [open, setOpen] = useState(false);
+    const scrolled = useSyncExternalStore(
+        subscribeToScroll,
+        () => window.scrollY > 8,
+        () => false
+    );
 
-    // Handle scroll effect
+    // Lock page scroll while the mobile menu is open.
     useEffect(() => {
-        const handleScroll = () => {
-            setHasScrolled(window.scrollY > 20);
+        document.body.style.overflow = open ? "hidden" : "";
+        return () => {
+            document.body.style.overflow = "";
         };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [open]);
 
-    // Close mobile menu when route changes
-    useEffect(() => {
-        setIsMenuOpen(false);
-    }, [pathname]);
+    const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
     return (
         <header
-            className={`fixed w-full z-50 transition-all duration-500 ${
-                hasScrolled
-                    ? "py-3 bg-[rgba(10,10,15,0.8)] backdrop-blur-xl border-b border-[var(--glass-border)]"
-                    : "py-5 bg-transparent"
+            className={`no-print fixed inset-x-0 top-0 z-40 transition-[background-color,border-color,box-shadow] duration-300 ${
+                scrolled || open
+                    ? "border-b border-line bg-bg/85 backdrop-blur-md"
+                    : "border-b border-transparent bg-transparent"
             }`}
         >
-            <div className="container mx-auto px-6 flex justify-between items-center">
-                {/* Logo */}
-                <Link href="/" className="group flex items-center gap-2">
-                    <span className="relative flex h-10 w-10 items-center justify-center">
-                        <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-[var(--accent-cyan)] to-[var(--accent-purple)] opacity-100" />
-                        <span className="relative font-mono font-bold text-[var(--bg-primary)]">BF</span>
-                    </span>
-                    <span className="font-semibold text-lg hidden sm:block">
-                        Ben Fielder
-                    </span>
+            <div className="container-page flex h-16 items-center justify-between">
+                <Link
+                    href="/"
+                    onClick={() => setOpen(false)}
+                    className="group flex items-baseline gap-2"
+                    aria-label="Home"
+                >
+                    <span className="display text-2xl leading-none transition-colors group-hover:text-accent">{profile.name}</span>
                 </Link>
 
-                {/* Mobile menu button */}
-                <button
-                    className="md:hidden relative w-10 h-10 flex items-center justify-center"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-label="Toggle menu"
-                    aria-expanded={isMenuOpen}
-                >
-                    <div className="relative w-6 h-5 flex flex-col justify-between">
-                        <span
-                            className={`block h-0.5 w-full bg-current transition-all duration-300 ${
-                                isMenuOpen ? "rotate-45 translate-y-2" : ""
-                            }`}
-                        />
-                        <span
-                            className={`block h-0.5 w-full bg-current transition-all duration-300 ${
-                                isMenuOpen ? "opacity-0" : ""
-                            }`}
-                        />
-                        <span
-                            className={`block h-0.5 w-full bg-current transition-all duration-300 ${
-                                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                            }`}
-                        />
-                    </div>
-                </button>
-
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-1">
+                <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
                     {navItems.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className={`nav-link px-4 py-2 rounded-lg transition-colors ${
-                                pathname === item.href ? "active text-[var(--text-primary)]" : ""
+                            aria-current={isActive(item.href) ? "page" : undefined}
+                            className={`rounded-full px-3.5 py-1.5 text-sm transition-colors ${
+                                isActive(item.href)
+                                    ? "bg-bg-muted text-fg"
+                                    : "text-fg-muted hover:bg-bg-muted hover:text-fg"
                             }`}
                         >
                             {item.label}
                         </Link>
                     ))}
+                    <ThemeToggle className="ml-2" />
                 </nav>
+
+                <div className="flex items-center gap-2 md:hidden">
+                    <ThemeToggle />
+                    <button
+                        type="button"
+                        onClick={() => setOpen((v) => !v)}
+                        aria-expanded={open}
+                        aria-controls="mobile-nav"
+                        aria-label={open ? "Close menu" : "Open menu"}
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-fg-muted transition-colors hover:border-line-strong hover:text-fg"
+                    >
+                        {open ? <Close width={18} height={18} /> : <Menu width={18} height={18} />}
+                    </button>
+                </div>
             </div>
 
-            {/* Mobile Navigation */}
-            <div
-                className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-                    isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                }`}
-            >
-                <nav className="container mx-auto px-6 py-6 flex flex-col gap-2 bg-[rgba(10,10,15,0.95)] backdrop-blur-xl border-t border-[var(--glass-border)]">
-                    {navItems.map((item, index) => (
+            <div id="mobile-nav" className={`md:hidden ${open ? "block" : "hidden"} border-t border-line bg-bg`}>
+                <nav className="container-page flex flex-col py-4" aria-label="Mobile">
+                    {navItems.map((item, i) => (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className={`px-4 py-3 rounded-lg transition-all duration-300 ${
-                                pathname === item.href
-                                    ? "bg-[var(--glass-highlight)] text-[var(--accent-cyan)]"
-                                    : "text-[var(--text-secondary)] hover:bg-[var(--glass-bg)] hover:text-[var(--text-primary)]"
+                            onClick={() => setOpen(false)}
+                            aria-current={isActive(item.href) ? "page" : undefined}
+                            className={`flex items-center justify-between border-b border-line py-4 text-lg last:border-0 ${
+                                isActive(item.href) ? "text-fg" : "text-fg-muted"
                             }`}
-                            style={{ animationDelay: `${index * 50}ms` }}
                         >
-                            {item.label}
+                            <span className="display text-3xl">{item.label}</span>
+                            <span className="font-mono text-xs text-fg-faint">0{i + 1}</span>
                         </Link>
                     ))}
                 </nav>
