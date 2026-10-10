@@ -1,43 +1,47 @@
 export interface Education {
     id: string;
     institution: string;
-    degree: string;
-    date: string;
+    qualification: string;
+    period: string;
+    /** Short form for cards and the CV, e.g. "2:1". */
     grade: string;
-    description: string;
-    courses?: string[];
+    /** Spelled-out form used where there is room. */
+    gradeLabel: string;
+    detailLabel: string;
+    details: string[];
 }
 
 export const education: Education[] = [
     {
-        id: "education-1",
+        id: "warwick",
         institution: "University of Warwick",
-        degree: "Computer Science BSc",
-        date: "2022 - 2025",
-        grade: "Upper Second Class (2:1)",
-        description: "Key Modules:",
-        courses: [
+        qualification: "BSc Computer Science (Hons)",
+        period: "2022 - 2025",
+        grade: "2:1",
+        gradeLabel: "Upper Second Class (2:1)",
+        detailLabel: "Modules",
+        details: [
+            "Software Engineering",
+            "Algorithms",
+            "Database Systems",
+            "Operating Systems",
+            "Computer Networks",
+            "Computer Architecture",
             "Machine Learning",
             "Neural Computing",
-            "Software Engineering",
-            "Database Systems",
             "Computer Graphics",
             "Web Development",
             "Mobile Robotics",
         ],
     },
     {
-        id: "education-2",
+        id: "marling",
         institution: "Marling School",
-        degree: "A-Levels",
-        date: "2020 - 2022",
+        qualification: "A-Levels",
+        period: "2020 - 2022",
         grade: "A*A*A*A*",
-        description: "Subjects:",
-        courses: [
-            "Mathematics",
-            "Further Mathematics",
-            "Computer Science",
-            "Physics",
-        ],
-    }
+        gradeLabel: "A*A*A*A*",
+        detailLabel: "Subjects",
+        details: ["Mathematics", "Further Mathematics", "Computer Science", "Physics"],
+    },
 ];

@@ -1,89 +1,43 @@
-import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/data/projects";
+import type { Metadata } from "next";
+import FeaturedProject from "@/components/FeaturedProject";
+import PageIntro from "@/components/PageIntro";
+import ProjectTile from "@/components/ProjectTile";
+import Section from "@/components/Section";
+import { featuredProjects, otherProjects } from "@/data/projects";
+
+export const metadata: Metadata = {
+    title: "Projects",
+    description:
+        "Platforms, developer tools, web apps, games and hardware built by Ben Fielder, from a multi-agent engineering platform to a Unity games label.",
+    alternates: { canonical: "/projects" },
+};
 
 export default function ProjectsPage() {
-    const featuredProjects = projects.filter(p => p.featured);
-    const otherProjects = projects.filter(p => !p.featured);
-
     return (
-        <div className="relative">
-            {/* Hero section */}
-            <section className="py-16 relative">
-                <div className="container mx-auto px-6">
-                    <div className="max-w-3xl">
-                        <span className="font-mono text-sm text-[var(--accent-cyan)] mb-4 block">
-                            PORTFOLIO
-                        </span>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                            My <span className="text-gradient">Projects</span>
-                        </h1>
-                        <p className="text-xl text-[var(--text-secondary)] leading-relaxed">
-                            A collection of projects I&apos;ve built over the years, from games and 
-                            creative coding experiments to developer tools and web applications.
-                        </p>
-                    </div>
+        <>
+            <PageIntro
+                eyebrow="Projects"
+                title={
+                    <>
+                        Things I&apos;ve <em className="text-accent">built</em>, from agent platforms to mobile games.
+                    </>
+                }
+                intro="My recent side projects focus on AI-assisted engineering: making coding agents follow a real lifecycle and a team's conventions. Further down are the games, creative-coding experiments and tools I built along the way."
+            />
+
+            <Section id="featured" number="01" title="Featured" intro="Current projects, with the most depth.">
+                {featuredProjects.map((project, i) => (
+                    <FeaturedProject key={project.id} project={project} index={i} />
+                ))}
+            </Section>
+
+            <Section id="archive" number="02" title="Archive" intro="Games, creative coding, tools and hardware.">
+                <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2">
+                    {otherProjects.map((project) => (
+                        <ProjectTile key={project.id} project={project} />
+                    ))}
                 </div>
-            </section>
-
-            {/* Featured Projects */}
-            <section className="py-12 relative">
-                <div className="container mx-auto px-6">
-                    <div className="mb-8">
-                        <h2 className="text-2xl font-bold flex items-center gap-3">
-                            <span className="w-8 h-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-[var(--accent-cyan)] to-[var(--accent-purple)]">
-                                ⭐
-                            </span>
-                            Featured Projects
-                        </h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {featuredProjects.map((project, index) => (
-                            <ProjectCard
-                                key={project.id}
-                                title={project.title}
-                                description={project.description}
-                                imagePath={project.imagePath}
-                                technologies={project.technologies}
-                                demoLink={project.demoLink}
-                                githubLink={project.githubLink}
-                                index={index}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Other Projects */}
-            {otherProjects.length > 0 && (
-                <section className="py-12 relative">
-                    <div className="container mx-auto px-6">
-                        <div className="mb-8">
-                            <h2 className="text-2xl font-bold flex items-center gap-3">
-                                <span className="w-8 h-8 flex items-center justify-center rounded-lg bg-[var(--glass-bg)] border border-[var(--glass-border)]">
-                                    🚀
-                                </span>
-                                More Projects
-                            </h2>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {otherProjects.map((project, index) => (
-                                <ProjectCard
-                                    key={project.id}
-                                    title={project.title}
-                                    description={project.description}
-                                    imagePath={project.imagePath}
-                                    technologies={project.technologies}
-                                    demoLink={project.demoLink}
-                                    githubLink={project.githubLink}
-                                    index={index + featuredProjects.length}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
-        </div>
+            </Section>
+        </>
     );
 }

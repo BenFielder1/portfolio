@@ -1,151 +1,130 @@
 "use client";
+
 import { useState } from "react";
+import { Alert, ArrowRight, Check } from "@/components/Icons";
+import { profile } from "@/data/profile";
+
+type Status = "idle" | "sending" | "success" | "error";
 
 export default function ContactForm() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+    const [status, setStatus] = useState<Status>("idle");
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const data = new FormData(form);
+        setStatus("sending");
 
         try {
             const response = await fetch("/api/contact", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: data.get("name"),
+                    email: data.get("email"),
+                    message: data.get("message"),
+                    company: data.get("company"),
+                }),
             });
-
-            if (!response.ok) {
-                throw new Error("Failed to send message");
-            }
-
-            setSubmitStatus("success");
-            setFormData({ name: "", email: "", message: "" });
+            if (!response.ok) throw new Error(`Request failed with ${response.status}`);
+            form.reset();
+            setStatus("success");
         } catch {
-            setSubmitStatus("error");
-        } finally {
-            setIsSubmitting(false);
+            setStatus("error");
         }
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Success message */}
-            {submitStatus === "success" && (
-                <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/30 flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+        <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
+            {status === "success" && (
+                <div
+                    role="status"
+                    className="flex items-start gap-3 rounded-xl border border-ok/30 bg-ok-soft p-4 text-sm"
+                >
+                    <Check width={18} height={18} className="mt-0.5 shrink-0 text-ok" />
                     <div>
-                        <p className="font-medium text-green-400">Message sent successfully!</p>
-                        <p className="text-sm text-[var(--text-secondary)] mt-1">
-                            Thanks for reaching out. I&apos;ll get back to you soon.
+                        <p className="font-medium text-fg">Message sent.</p>
+                        <p className="mt-0.5 text-fg-muted">Thanks for getting in touch. I&apos;ll reply soon.</p>
+                    </div>
+                </div>
+            )}
+
+            {status === "error" && (
+                <div
+                    role="alert"
+                    className="flex items-start gap-3 rounded-xl border border-err/30 bg-err-soft p-4 text-sm"
+                >
+                    <Alert width={18} height={18} className="mt-0.5 shrink-0 text-err" />
+                    <div>
+                        <p className="font-medium text-fg">Something went wrong.</p>
+                        <p className="mt-0.5 text-fg-muted">
+                            Please try again, or email me directly at{" "}
+                            <a href={`mailto:${profile.email}`} className="link-underline text-fg">
+                                {profile.email}
+                            </a>
+                            .
                         </p>
                     </div>
                 </div>
             )}
 
-            {/* Error message */}
-            {submitStatus === "error" && (
-                <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3">
-                    <svg className="w-6 h-6 text-red-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div>
-                        <p className="font-medium text-red-400">Something went wrong</p>
-                        <p className="text-sm text-[var(--text-secondary)] mt-1">
-                            Please try again or email me directly at bencfielder@outlook.com
-                        </p>
-                    </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                    <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-fg">
+                        Name
+                    </label>
+                    <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        maxLength={120}
+                        autoComplete="name"
+                        placeholder="Your name"
+                        className="field"
+                    />
                 </div>
-            )}
-
-            {/* Name field */}
-            <div className="space-y-2">
-                <label htmlFor="name" className="block text-sm font-medium text-[var(--text-secondary)]">
-                    Name
-                </label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="John Doe"
-                    className="input-field"
-                />
+                <div>
+                    <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-fg">
+                        Email
+                    </label>
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        maxLength={200}
+                        autoComplete="email"
+                        placeholder="you@example.com"
+                        className="field"
+                    />
+                </div>
             </div>
 
-            {/* Email field */}
-            <div className="space-y-2">
-                <label htmlFor="email" className="block text-sm font-medium text-[var(--text-secondary)]">
-                    Email
-                </label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="john@example.com"
-                    className="input-field"
-                />
-            </div>
-
-            {/* Message field */}
-            <div className="space-y-2">
-                <label htmlFor="message" className="block text-sm font-medium text-[var(--text-secondary)]">
+            <div>
+                <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-fg">
                     Message
                 </label>
                 <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
-                    rows={5}
-                    placeholder="Tell me about your project or just say hello..."
-                    className="input-field resize-none"
+                    rows={6}
+                    maxLength={5000}
+                    placeholder="What would you like to talk about?"
+                    className="field resize-y"
                 />
             </div>
 
-            {/* Submit button */}
-            <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full btn-primary justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-                {isSubmitting ? (
-                    <>
-                        <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                        </svg>
-                        Sending...
-                    </>
-                ) : (
-                    <>
-                        Send Message
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                    </>
-                )}
+            {/* Honeypot: hidden from people, filled by naive bots. */}
+            <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden>
+                <label htmlFor="company">Company</label>
+                <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
+
+            <button type="submit" disabled={status === "sending"} className="btn btn-primary">
+                {status === "sending" ? "Sending…" : "Send message"}
+                <ArrowRight width={16} height={16} />
             </button>
         </form>
     );
