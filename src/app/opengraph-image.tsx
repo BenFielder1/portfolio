@@ -33,7 +33,6 @@ export default function OpenGraphImage() {
                     }}
                 >
                     <span>{profile.role}</span>
-                    <span>{profile.location}</span>
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column" }}>
